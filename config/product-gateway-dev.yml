@@ -1,2 +1,20 @@
+spring:
+  application:
+    name: gatteway
 server:
-port: 8771
+  port: 9999
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+data:
+  message: test1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
